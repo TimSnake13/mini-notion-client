@@ -1,6 +1,6 @@
 import { Box, Button, Center } from "@chakra-ui/react";
 import React from "react";
-import { Note } from "../types";
+import { NoteObj } from "./types";
 
 interface Props {
   id: string;

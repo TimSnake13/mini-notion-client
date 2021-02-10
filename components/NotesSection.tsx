@@ -30,6 +30,7 @@ import {
   AiOutlineDelete,
   AiOutlinePlusSquare,
 } from "react-icons/ai";
+import { SlateNote } from "./types";
 // import {
 //   useCreateNoteMutation,
 //   useUpdateNoteMutation,
@@ -72,6 +73,7 @@ const NotesSection = () => {
   const [ids, setIds] = useState<string[]>(getIdsInitialState);
   const [currentID, setCurrentID] = useState("");
   const [value, setValue] = useState(initialValue);
+  // const [slateValue, setSlateValue] = useState<SlateNote>(initialValue);
   const [title, setTitle] = useState(defaultTitle);
   const editor = useMemo(() => withHistory(withReact(createEditor())), []);
 
@@ -155,7 +157,7 @@ const NotesSection = () => {
   //   });
   // };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     SaveStrToLocalStorage("ids", JSON.stringify(ids));
   }, [ids]);
   useEffect(() => {
@@ -213,9 +215,9 @@ const NotesSection = () => {
           UpdateNote
         </Button> */}
 
-        {/* <Button onClick={() => setValue(initialValue)}>Set Init value</Button>
+        <Button onClick={() => setValue(initialValue)}>Set Init value</Button>
         <Button onClick={() => SaveNote(currentID)}>SAVE</Button>
-        <Button onClick={() => LoadNote(currentID)}>LOAD</Button> */}
+        <Button onClick={() => LoadNote(currentID)}>LOAD</Button>
         <Box pt={8}>
           <Flex>
             <Input
@@ -241,14 +243,14 @@ const NotesSection = () => {
             editor={editor}
             value={value}
             onChange={(value) => {
-              // setValue(value);
+              setValue(value);
             }}
           >
             <HoveringToolbar />
             <Editable
               renderLeaf={(props) => <Leaf {...props} />}
               placeholder="Enter some text..."
-              onDOMBeforeInput={(event) => {
+              onDOMBeforeInput={(event: InputEvent) => {
                 switch (event.inputType) {
                   case "formatBold":
                     event.preventDefault();

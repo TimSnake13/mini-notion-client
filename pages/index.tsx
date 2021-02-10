@@ -11,17 +11,17 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <NotesSection />
+
       <main className={styles.main}>
         <h1 className={styles.title}>
           Tan's <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
         <p className={styles.description}>
-          URL: {process.env.NEXT_PUBLIC_API_URL}
+          ENV_URL: {process.env.NEXT_PUBLIC_API_URL}
         </p>
       </main>
-
+      <NotesSection />
       <footer className={styles.footer}></footer>
     </div>
   );
