@@ -72,8 +72,7 @@ const NotesSection = () => {
   };
   const [ids, setIds] = useState<string[]>(getIdsInitialState);
   const [currentID, setCurrentID] = useState("");
-  const [value, setValue] = useState(initialValue);
-  // const [slateValue, setSlateValue] = useState<SlateNote>(initialValue);
+  const [value, setValue] = useState<any>(initialValue);
   const [title, setTitle] = useState(defaultTitle);
   const editor = useMemo(() => withHistory(withReact(createEditor())), []);
 
@@ -286,7 +285,7 @@ export const toggleFormat = (editor, format) => {
 };
 
 export const isFormatActive = (editor, format) => {
-  const [match] = Editor.nodes(editor, {
+  const [match]: any = Editor.nodes(editor, {
     match: (n) => n[format] === true,
     mode: "all",
   });
