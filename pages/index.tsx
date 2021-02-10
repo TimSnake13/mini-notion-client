@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
+// import Navbar from "../components/Navbar/Navbar";
 import NotesSection from "../components/NotesSection";
 import styles from "../styles/Home.module.css";
 
