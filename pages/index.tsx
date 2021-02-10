@@ -15,8 +15,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
+          URL: {process.env.NEXT_PUBLIC_API_URL}
         </p>
 
         <div className={styles.grid}>
