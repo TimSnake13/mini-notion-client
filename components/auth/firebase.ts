@@ -1,5 +1,8 @@
 import firebase from "firebase/app";
 import "firebase/auth";
+import "firebase/auth";
+import "firebase/firestore";
+import "firebase/storage";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -10,8 +13,16 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_APP_ID,
   measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 };
-const app = firebase.initializeApp(firebaseConfig);
-//   firebase.analytics();
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+  //   firebase.analytics();
+}
 
-export const auth = app.auth();
-export default app;
+const app = firebase.app();
+const auth = firebase.auth();
+const db = firebase.firestore();
+const now = firebase.firestore.Timestamp.now();
+const storage = firebase.storage();
+export default { auth, db, now, storage };
+
+console.log(app.name ? "Firebase Mode Activated!" : "Firebase not working :(");
