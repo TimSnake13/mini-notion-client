@@ -183,7 +183,7 @@ const NotesSection = () => {
   };
 
   return (
-    <Flex direction="row" h={"100vh"}>
+    <Flex direction="row" h={"100vh"} w="100%">
       <Flex direction="column" bg={"#E5E7EB"} pt={8} px={4}>
         {ids.map((id) => (
           <NoteItem
@@ -214,11 +214,11 @@ const NotesSection = () => {
           UpdateNote
         </Button> */}
 
-        <Button onClick={() => setValue(initialValue)}>Set Init value</Button>
+        {/* <Button onClick={() => setValue(initialValue)}>Set Init value</Button>
         <Button onClick={() => SaveNote(currentID)}>SAVE</Button>
-        <Button onClick={() => LoadNote(currentID)}>LOAD</Button>
-        <Box pt={8}>
-          <Flex>
+        <Button onClick={() => LoadNote(currentID)}>LOAD</Button> */}
+        <Box pt={8} w="100%">
+          <Flex w="100%">
             <Input
               placeholder={defaultTitle}
               size="lg"
