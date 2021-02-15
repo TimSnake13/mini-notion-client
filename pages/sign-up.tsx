@@ -18,12 +18,12 @@ import {
   Button,
   Heading,
 } from "@chakra-ui/react";
-import { signUp } from "../components/auth/SignUp";
+import { signUp } from "../src/components/auth/SignUp";
 import { FormErrorMessage } from "@chakra-ui/react";
 import * as Yup from "yup";
 
 import { useForm } from "react-hook-form";
-import { auth, db } from "../components/auth/firebase";
+import { auth, db } from "../src/components/auth/firebase";
 
 const signup = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
