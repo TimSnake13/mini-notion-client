@@ -1,7 +1,6 @@
 import Head from "next/head";
 import React from "react";
 // import Navbar from "../components/Navbar/Navbar";
-import NotesSection from "../src/components/NotesSection";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -21,7 +20,7 @@ export default function Home() {
           ENV_URL: {process.env.NEXT_PUBLIC_API_URL}
         </p>
       </main>
-      <NotesSection />
+
       <footer className={styles.footer}></footer>
     </div>
   );

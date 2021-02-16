@@ -15,13 +15,8 @@
     "emailVerificationSubject": "Forgot password code: {####}",
     "emailVerificationMessage": "Forgot password code: {####}",
     "defaultPasswordPolicy": false,
-    "passwordPolicyMinLength": 8,
-    "passwordPolicyCharacters": [
-        "Requires Lowercase",
-        "Requires Numbers",
-        "Requires Symbols",
-        "Requires Uppercase"
-    ],
+    "passwordPolicyMinLength": 6,
+    "passwordPolicyCharacters": [],
     "requiredAttributes": [
         "email"
     ],
@@ -57,5 +52,12 @@
     "thirdPartyAuth": false,
     "authProviders": [],
     "usernameCaseSensitive": false,
-    "dependsOn": []
+    "dependsOn": [],
+    "hostedUI": true,
+    "hostedUIDomainName": "5jewbj8amocx",
+    "authProvidersUserPool": [
+        "Google"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://www.tanhaotian.com/dashboard/\"],\"LogoutURLs\":[\"https://www.tanhaotian.com/\"]}"
 }
