@@ -1,40 +1,13 @@
-import React, { useState, useMemo, useEffect, useLayoutEffect } from "react";
-import { Slate, Editable, withReact } from "slate-react";
-import {
-  Editor,
-  Transforms,
-  Text,
-  createEditor,
-  Node,
-  Element as SlateElement,
-} from "slate";
+import { Box, Button, Flex, Input, Spacer } from "@chakra-ui/react";
+import React, { useEffect, useMemo, useState } from "react";
+import { AiOutlineDelete, AiOutlinePlusSquare } from "react-icons/ai";
+import { createEditor, Editor, Text, Transforms } from "slate";
 import { withHistory } from "slate-history";
-import {
-  Box,
-  Button,
-  Collapse,
-  Flex,
-  Input,
-  Slide,
-  SlideFade,
-  Spacer,
-  useDisclosure,
-} from "@chakra-ui/react";
-import { initialValue } from "./initialValue";
+import { Editable, Slate, withReact } from "slate-react";
 import { v4 as uuid } from "uuid";
-import NoteItem from "./NoteItem";
 import { HoveringToolbar } from "./HoveringToolbar";
-import { useCallback } from "react";
-import {
-  AiFillPlusCircle,
-  AiOutlineDelete,
-  AiOutlinePlusSquare,
-} from "react-icons/ai";
-import { SlateNote } from "./types";
-// import {
-//   useCreateNoteMutation,
-//   useUpdateNoteMutation,
-// } from "../generated/graphql";
+import { initialValue } from "./initialValue";
+import NoteItem from "./NoteItem";
 
 type SlateValueType = [
   {
@@ -178,7 +151,6 @@ const NotesSection = () => {
     DeleteItemFromLocalStorage(_currentId);
     DeleteItemFromLocalStorage(_currentId + "-title");
     setIds((curr) => [...curr].filter((val) => val !== _currentId));
-
     setCurrentID(ids[0]);
   };
 
@@ -234,7 +206,7 @@ const NotesSection = () => {
               leftIcon={<AiOutlineDelete />}
               variant="outline"
             >
-              Delete{" "}
+              Delete
             </Button>
           </Flex>
 
