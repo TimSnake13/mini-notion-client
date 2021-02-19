@@ -73,61 +73,7 @@ const NotesSection = () => {
     setCurrentID(newID);
     setValue(initialValue);
     setTitle(defaultTitle);
-    // CreateNoteToServer({
-    //   id: newID,
-    //   userId: "tempID",
-    //   title: defaultTitle,
-    //   content: JSON.stringify(initialValue),
-    // });
-
-    // async (values: Values, { setErrors }) => {
-    //   const response = await register({ variables: { data: values } });
-    //   if (response.data?.createUser.errors) {
-    //     setErrors(toErrorMap(response.data.createUser.errors));
-    //   } else if (response.data?.createUser.user) {
-    //     // Navigate to dashboard
-    //     router.push("/");
-    //   }
-    // };
   };
-
-  // const [createNote] = useCreateNoteMutation();
-  // const CreateNoteToServer = async ({
-  //   id,
-  //   userId,
-  //   title,
-  //   content,
-  // }: InputTypeGQL) => {
-  //   const response = await createNote({
-  //     variables: {
-  //       data: {
-  //         id,
-  //         userId,
-  //         title,
-  //         content,
-  //       },
-  //     },
-  //   });
-  // };
-
-  // const [updateNote] = useUpdateNoteMutation();
-  // const UpdateNoteToServer = async ({
-  //   id,
-  //   userId,
-  //   title,
-  //   content,
-  // }: InputTypeGQL) => {
-  //   const response = await updateNote({
-  //     variables: {
-  //       data: {
-  //         id,
-  //         userId,
-  //         title,
-  //         content,
-  //       },
-  //     },
-  //   });
-  // };
 
   useEffect(() => {
     SaveStrToLocalStorage("ids", JSON.stringify(ids));
